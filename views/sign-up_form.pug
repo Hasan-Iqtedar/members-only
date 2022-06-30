@@ -1,0 +1,29 @@
+extends layout
+
+block content 
+  div(class='container-fluid content-container')
+    div(class='row')
+      div(class='col-sm-8 form-card')
+        h1=title
+        
+        div.form-container
+          form(method='POST', action='')
+          
+            div.form-group
+              label(for='firstName') First Name (*): 
+              input#firstName.form-control(type='text', placeholder='First Name', name='firstName', required=true)
+
+            div.form-group
+              label(for='lastName') Last Name (*): 
+              input#lastName.form-control(type='text', placeholder='Last Name', name='lastName', required=true)
+
+            div.form-group
+              label(for='username') Username (*): 
+              input#username.form-control(type='text', placeholder='Username', name='username', required=true)
+
+            div.form-group
+              label(for='password') Password (*): 
+              input#password.form-control(type='password', placeholder='Password', name='password', required=true)
+
+            input#idAdmin.checkbox-input(type='checkbox', name='isAdmin')
+            label(for='isAdmin') Is Admin
