@@ -7,7 +7,7 @@ block content
         h1=title
         
         div.form-container
-          form(method='POST', action='')
+          form.form(method='POST', action='')
           
             div.form-group
               label(for='firstName') First Name (*): 
@@ -24,6 +24,9 @@ block content
             div.form-group
               label(for='password') Password (*): 
               input#password.form-control(type='password', placeholder='Password', name='password', required=true)
+            
+            div.form-group
+              input#idAdmin.checkbox-input(type='checkbox', name='isAdmin')
+              label(for='isAdmin') Is Admin
 
-            input#idAdmin.checkbox-input(type='checkbox', name='isAdmin')
-            label(for='isAdmin') Is Admin
+            button.btn.btn-success.submit-btn(type='submit') Submit
