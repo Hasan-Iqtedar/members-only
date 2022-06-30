@@ -6,7 +6,7 @@ module.exports = mongoose.model(
   new Schema({
     title: { type: String, maxlength: 30, required: true },
     text: { type: String },
-    timestamp: new Date(),
+    timestamp: { type: Date },
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   })
 );
