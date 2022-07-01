@@ -18,4 +18,7 @@ router.get('/log-out', userController.logOut);
 router.get('/membership', userController.becomeMemberGet);
 router.post('/membership', userController.becomeMemberPost);
 
+router.get('/new-message', messageController.createMessageGet);
+router.post('/new-message', messageController.createMessagePost);
+
 module.exports = router;
