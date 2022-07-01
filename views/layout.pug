@@ -16,10 +16,14 @@ html(lang='en')
           li(class='nav-item')
             a(class='nav-link' href='/') Home
           li(class='nav-item')
-            a(class='nav-link' href='/membership') Membership
-          li(class='nav-item')
-            a(class='nav-link' href='/sign-up') Sign Up
-          li(class='nav-item')
-            a(class='nav-link' href='/login') Login
+            a(class='nav-link' href='membership') Membership
+          if user 
+            li(class='nav-item')
+              a(class='nav-link' href='/log-out') Log out
+          else
+            li(class='nav-item')
+              a(class='nav-link' href='/sign-up') Sign Up
+            li(class='nav-item')
+              a(class='nav-link' href='/login') Login
 
     block content
