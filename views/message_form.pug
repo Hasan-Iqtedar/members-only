@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  div(class='container-fluid content-container')
+    div(class='row')
+      div(class='col-sm-8 form-card message-form')
+        h1=title
+
+        div.form-container
+          form.form(method='POST', action='')
+
+            div.form-group
+              input#title.form-control(type='text', placeholder='title', name='title', required='true')
+
+            div.form-group
+              textarea#message.form-control(type='textarea', placeholder='Type...', name='newMessage', required='true')
+            
+            button.btn.btn-success.submit-btn(type='submit') Submit
