@@ -13,16 +13,12 @@ body {
   justify-content: space-evenly;
 }
 
-.content-container {
-
-}
-
 .form-card {
   width: 500px;
   border-radius: 5px;
   padding: 5px;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 40px;
   text-align: center;
   box-shadow: 1px 1px 5px #919191;
 }
