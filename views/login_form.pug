@@ -1,0 +1,26 @@
+extends layout
+
+block content 
+  div(class='container-fluid content-container')
+    div(class='row')
+      div(class='col-sm-8 form-card login-form')
+        h1=title
+
+        div.form-container
+          form.form(method='POST', action='')
+
+            div.form-group
+              label(for='username') Username (*)
+              input#username.form-control(type='text', placeholder='Username', name='username', required='true', value=(username===undefined? '': username))
+
+            div.form-group
+              label(for='password') Password (*) 
+              input#password.form-control(type='password', placeholder='Password', name='password', required='true')
+
+            button.btn.btn-success.submit-btn(type='submit') Login
+        
+      if errors 
+        div(style='margin-top: 20px')
+          ul
+            for error in errors 
+              li(style='color: red')!= error.msg
