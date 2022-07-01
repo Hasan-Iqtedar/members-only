@@ -43,6 +43,16 @@ body {
   flex-direction: column;
 }
 
+.message-form {
+  width: 600px;
+  text-align: left;
+  margin-left: 40px;
+}
+
+#message {
+  height: 150px;
+}
+
 label {
   margin-bottom: 5px;
 }
@@ -53,4 +63,5 @@ input {
 
 .submit-btn {
   align-self: flex-end;
+  margin-top: 5px;
 }
