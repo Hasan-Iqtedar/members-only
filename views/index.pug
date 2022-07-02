@@ -9,12 +9,12 @@ block content
         div.message-card
           div.header
             h2=message.title
-            p=message.user.username
-          div.message-content
-            if user
-              p #{message.text}
+            if user && user.isMember
+              p=message.user.username
             else 
-              p Login to see the message!
+              p Only members see name
+          div.message-content
+            p #{message.text}
           hr
           div.footer
             p=message.timestamp.toDateString()
