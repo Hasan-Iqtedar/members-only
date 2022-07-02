@@ -98,9 +98,39 @@ exports.logOut = function (req, res, next) {
 };
 
 exports.becomeMemberGet = function (req, res, next) {
-  res.send('Become member page get');
+  res.render('member_form', { user: req.user });
 };
 
-exports.becomeMemberPost = function (req, res, next) {
-  res.send('Become member page post');
-};
+exports.becomeMemberPost = [
+  body('answer')
+    .trim()
+    .isLength({ min: 1 })
+    .withMessage('Please provide an answer')
+    .custom((value) => value.toLowerCase() === 'mellon')
+    .withMessage('Incorrect')
+    .escape(),
+
+  (req, res, next) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      res.render('member_form', { user: req.user, errors: errors.array() });
+      return;
+    }
+    //If Alreday a member.
+    if (req.user.isMember) {
+      res.redirect('/');
+      console.log('gee gee');
+      return;
+    }
+    const user = req.user;
+    user.isMember = true;
+
+    User.findByIdAndUpdate(user._id, user, {}, function (err, updatedUser) {
+      if (err) {
+        return next(err);
+      }
+      res.redirect('/');
+    });
+  },
+];
