@@ -1,8 +1,17 @@
 const { body, validationResult } = require('express-validator');
 const Message = require('../models/message');
 
+//Home page.
 exports.index = function (req, res, next) {
-  res.render('index', { title: 'Clubhouse', user: req.user });
+  Message.find({})
+    .populate('user')
+    .sort({ timestamp: -1 })
+    .exec(function (err, results) {
+      if (err) {
+        return next(err);
+      }
+      res.render('index', { messages: results, user: req.user });
+    });
 };
 
 exports.createMessageGet = function (req, res, next) {
@@ -44,5 +53,5 @@ exports.createMessagePost = [
 ];
 
 exports.deleteMessage = function (req, res, next) {
-  res.send('Delete Message');
+  res.send('Delete Message' + req.params.id);
 };
