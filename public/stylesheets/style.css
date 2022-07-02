@@ -65,3 +65,61 @@ input {
   align-self: flex-end;
   margin-top: 5px;
 }
+
+.message-card {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 250px;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #919191;
+}
+
+.message-card .header {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(25, 135, 84, 0.8);
+  margin-bottom: 10px;
+}
+
+.message-card .message-content {
+  padding: 10px;
+  font-size: medium;
+}
+
+.message-card .footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.message-card h2, .message-card p {
+  margin: 0;
+}
+
+.message-card hr {
+  margin-top: auto;
+  margin-bottom: 2px;
+}
+
+.delete-btn {
+  text-decoration-line: none;
+  font-size: large;
+  color: red;
+}
+
+.delete-btn:hover {
+  color: maroon;
+}

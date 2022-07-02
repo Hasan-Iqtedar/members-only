@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class='container-fluid content-container')
+    div(class='row')
+      div(class='col-sm-8')
+
+      for message in messages 
+        div.message-card
+          div.header
+            h2=message.title
+            p=message.user.username
+          div.message-content
+            if user
+              p #{message.text}
+            else 
+              p Login to see the message!
+          hr
+          div.footer
+            p=message.timestamp.toDateString()
+            if user && user.isAdmin 
+              a(href='/' + message._id + '/delete', class='delete-btn') Delete
