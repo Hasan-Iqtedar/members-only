@@ -66,7 +66,7 @@ input {
   margin-top: 5px;
 }
 
-.message-card {
+.message-card, .membership-card {
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ input {
   box-shadow: 1px 1px 5px #919191;
 }
 
-.message-card .header {
+.message-card .header, .membership-card .header  {
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -90,6 +90,31 @@ input {
   border-top-right-radius: 15px;
   background-color: rgba(25, 135, 84, 0.8);
   margin-bottom: 10px;
+}
+
+.membership-card .input-container {
+  text-align: center;
+  margin: auto;
+}
+
+.input-container p {
+  font-size: x-large;
+}
+
+.membership-card input {
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  font-size: x-large;
+  border: none;
+  border-radius: 15px;
+  color: whitesmoke;
+  background-color: #8ea48e;
+  font-variant: small-caps; 
+}
+
+.membership-card input:focus {
+  outline: none;
 }
 
 .message-card .message-content {
@@ -105,7 +130,7 @@ input {
   padding-right: 10px;
 }
 
-.message-card h2, .message-card p {
+.message-card h2, .message-card p, .membership-card h1 {
   margin: 0;
 }
 

@@ -1,0 +1,14 @@
+extends layout
+
+block content 
+  div(class='container-fluid content-container')
+    div(class='row')
+      div(class='col-sm-8 membership-card')
+        div.header 
+          h1 Speak Friend and Enter 
+        if user
+          div.input-container
+            input(type='text', maxLength=6)    
+        else 
+          div.input-container
+            p Login to become a member!    
