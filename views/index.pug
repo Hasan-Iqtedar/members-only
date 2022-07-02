@@ -3,20 +3,20 @@ extends layout
 block content
   div(class='container-fluid content-container')
     div(class='row')
-      div(class='col-sm-8')
+      div(class='col-sm-12')
 
-      for message in messages 
-        div.message-card
-          div.header
-            h2=message.title
-            if user && user.isMember
-              p=message.user.username
-            else 
-              p Only members see name
-          div.message-content
-            p #{message.text}
-          hr
-          div.footer
-            p=message.timestamp.toDateString()
-            if user && user.isAdmin 
-              a(href='/' + message._id + '/delete', class='delete-btn') Delete
+        for message in messages 
+          div.message-card
+            div.header
+              h2=message.title
+              if user && user.isMember
+                p=message.user.username
+              else 
+                p Only members see name
+            div.message-content
+              p #{message.text}
+            hr
+            div.footer
+              p=message.timestamp.toDateString()
+              if user && user.isAdmin 
+                a(href='/' + message._id + '/delete', class='delete-btn') Delete
