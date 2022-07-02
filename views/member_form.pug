@@ -7,8 +7,18 @@ block content
         div.header 
           h1 Speak Friend and Enter 
         if user
-          div.input-container
-            input(type='text', maxLength=6)    
+          form.form(method='POST', action='', style='height: inherit;')
+            div.input-container
+              input(type='text', maxLength=6, required='true', name='answer')
+
+            button.btn.btn-success.submit-btn(type='submit') Submit
+
         else 
           div.input-container
             p Login to become a member!    
+
+    if errors 
+      div(style='margin-top: 20px; text-align: center')
+        ul
+          for error in errors 
+            li(style='color: red')!= error.msg
