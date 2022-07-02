@@ -21,4 +21,6 @@ router.post('/membership', userController.becomeMemberPost);
 router.get('/new-message', messageController.createMessageGet);
 router.post('/new-message', messageController.createMessagePost);
 
+router.get('/:id/delete', messageController.deleteMessage);
+
 module.exports = router;
