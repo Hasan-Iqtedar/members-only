@@ -78,6 +78,10 @@ input {
   box-shadow: 1px 1px 5px #919191;
 }
 
+.membership-card .submit-btn{
+  border-bottom-right-radius: 15px;
+}
+
 .message-card .header, .membership-card .header  {
   padding: 5px;
   padding-left: 10px;
